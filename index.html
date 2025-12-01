@@ -1,1 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>HL Intellect | Smart Thinking, Real Solutions</title>
+  <meta name="description" content="HL Intellect Pvt. Ltd. - Upskill in Data Science, AI, MLOps, Big Data, BI, and more. Jaipur, Rajasthan.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:#193b66;
+      --accent:#fc4c02;
+      --bg:#f6f8fa;
+      --surface:#fff;
+      --shadow:0 6px 28px rgba(25,59,102,0.10);
+    }
+    body { font-family:'Roboto',Arial,sans-serif; margin:0; background:var(--bg); color:#222;}
+    .banner-top{
+      background:#fc4c02;
+      color:#fff;
+      font-weight:700;
+      text-align:center;
+      padding:10px;
+      letter-spacing:0.4px;
+      box-shadow:var(--shadow);
+      font-size:1.08rem;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .banner-top a{
+      color:#193b66;
+      background:#fffbe0;
+      padding:4px 15px;
+      border-radius:7px;
+      text-decoration:none;
+      border:1px solid #ffd700;
+      font-weight:bold;
+      margin-left:10px;
+      transition:background 0.22s;
+      font-size:1.07rem;
+    }
+    .banner-top a:hover{background:#ffe498;}
+    header{
+      background:linear-gradient(90deg,rgba(25,59,102,0.94) 65%,rgba(40,77,152,0.83) 100%);
+      color:#fff;
+      padding:0 0 34px 0;
+      box-shadow:var(--shadow);
+      border-bottom-left-radius: 38px;
+      border-bottom-right-radius: 38px;
+    }
+    .header-inner{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px 20px 0 20px;
+      gap:42px;
+      justify-content:space-between;
+    }
+    .site-title{
+      font-family:'Montserrat',Arial,sans-serif;
+      font-size:2.4rem;
+      font-weight:800;
+      letter-spacing:1.1px;
+      margin-bottom:7px;
+    }
+    .site-desc{
+      color:#fffbe0;
+      font-size:1.13rem;
+      font-family:'Roboto',Arial,sans-serif;
+      font-weight:500;
+      margin-bottom:7px;
+    }
+    nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap: 28px;
+    }
+    nav a{
+      color:#fff;
+      font-weight:bold;
+      font-size:1.06rem;
+      text-decoration:none;
+      border-bottom:2px solid transparent;
+      transition:border 0.2s;
+      padding:2px 3px;
+    }
+    nav a:hover{border-bottom:2px solid #ffd700;}
+    @media (max-width:700px){.header-inner{flex-direction:column;gap:5px;}nav ul{gap:12px;}}
 
+    .hero{
+      background:linear-gradient(110deg, #eaf0ff 55%, #f6f8fa 99%);
+      padding:54px 0 20px 0;
+      box-shadow:var(--shadow);
+      border-radius: 0 0 54px 54px;
+    }
+    .hero-flex{
+      max-width:1140px;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 20px;
+      gap:40px;
+    }
+    .hero-left{flex:1; min-width:280px;}
+    .hero-right{max-width:390px;}
+    .hero h1{
+      font-size:2.9rem;
+      color:var(--brand);
+      font-family:'Montserrat',Arial,sans-serif;
+      font-weight:800;
+      margin-bottom:15px;
+      letter-spacing:0.4px;
+    }
+    .hero h2{
+      font-size:1.35rem;
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:20px;
+      letter-spacing:0.14px;
+    }
+    .hero p{
+      font-size:1.17rem;
+      color:#2b3b4a;
+      margin-bottom:28px;
+      font-family:'Roboto',Arial,sans-serif;
+    }
+    .cta{
+      background:var(--accent);
+      color:#fff;
+      font-weight:700;
+      border:none;
+      border-radius:7px;
+      font-size:1.17rem;
+      padding:13px 40px;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      margin-bottom:6px;
+      transition:background 0.18s;
+    }
+    .cta:hover{background:var(--brand);}
+    .hero-img{
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 10px 38px #193b6666;
+      display:block;
+    }
+    @media (max-width:900px){
+      .hero-flex{flex-direction:column;}
+      .hero-right{max-width:100%;margin-top:22px;}
+    }
+
+    .section-title{
+      color:var(--brand);
+      font-size:2.16rem;
+      font-weight:750;
+      margin-bottom:31px;
+      text-align:center;
+      font-family:'Montserrat',Arial,sans-serif;
+      text-shadow:1px 2px 10px #ddeafe88;
+    }
+    .programs{background:#fff; padding:54px 0 20px;}
+    .programs .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+    .program-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(305px,1fr));
+      gap:32px;
+      margin-bottom:18px;
+    }
+    .program-card{
+      background:var(--surface);
+      box-shadow:0 2px 20px #193b661a;
+      padding:24px 20px 16px 20px;
+      border-radius:16px;
+      transition:transform .14s;
+      position:relative;
+      overflow:hidden;
+    }
+    .program-card:hover{transform:translateY(-6px) scale(1.04);}
+    .program-image{
+      width:100%;
+      max-width:314px;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      box-shadow:0 2px 15px #193b6611;
+      margin-bottom:12px;
+      background: #eaf0ff;
+    }
+    .program-card h3{color:var(--brand);margin-bottom:10px;font-size:1.2rem;font-family:Montserrat;}
+    .program-card p{color:#444;font-size:1.04rem;margin-bottom:14px;}
+    .more-btn{
+      background: var(--brand);
+      color: #fff;
+      padding: 8px 18px;
+      border:none;
+      border-radius:5px;
+      font-size:1.08rem;
+      font-weight:700;
+      cursor:pointer;
+      margin-bottom:8px;
+      box-shadow:0 2px 8px #193b661a;
+      transition:background .17s;
+    }
+    .more-btn:hover{background:var(--accent);}
+    .details-panel{
+      background: #ddeafe;
+      border-radius: 8px;
+      padding: 13px 13px;
+      box-shadow: 0 1px 7px #193b6633;
+      margin-top: 7px;
+      margin-bottom: 8px;
+      display: none;
+      font-size: 1.06rem;
+      z-index: 3;
+      line-height:1.65;
+      color:#2b3b4a;
+    }
+    .details-panel.show{display:block;}
+    .details-panel .fee{color:var(--accent);font-weight:800;}
+    .details-panel .contact-btn{background:var(--brand);color:#fff;padding:5px 14px;border-radius:4px;border:none;font-size:1rem;margin-right:8px;text-decoration:none;}
+    .details-panel .contact-btn.whatsapp{background:#25D366;}
+    .details-panel .contact-btn:hover{background:var(--accent);}
+    @media (max-width:700px){
+      .program-cards{grid-template-columns:1fr;}
+    }
+
+    .services{background:#eef2f6;padding:38px 0;}
+    .services .container{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;}
+    .service{background:#fff;border-radius:11px;padding:17px 14px;box-shadow:0 2px 10px #193b6611;}
+    .service h4{color:var(--accent);margin-bottom:9px;font-size:1.08rem;}
+    .service ul{margin:0 0 10px 17px;padding:0;}
+    .service li{font-size:1.01rem;margin-bottom:3px;}
+
+    .about{background:#fff;padding:35px 0;}
+    .about .container{max-width:950px;margin:auto;}
+    .about-columns{display:flex;flex-wrap:wrap;gap:32px;}
+    .about-col{flex:1;min-width:220px;}
+    .about h2{color:var(--brand);}
+    .about p{font-size:1.06rem;}
+    
+    .trainers{background:linear-gradient(90deg,#eaf0ff 60%,#fff0e8 100%);padding:41px 0;}
+    .trainers .container{max-width:950px;margin:auto;}
+    .trainer{background:#fff;padding:20px;border-radius:9px;box-shadow:0 1px 7px #193b6607;}
+    .trainer h4{margin: 10px 0 5px;color:var(--accent);font-family:Montserrat;font-size:1.12rem;}
+    .trainer span{font-size:0.97rem;color:#5c5c5c;}
+    .trainer-details{font-size:0.99rem;color:#293d5c;margin-top:10px;}
+    
+    .contact-section{background:var(--brand);color:#fff;padding:38px 0;}
+    .contact-section .container{max-width:700px;margin:auto;}
+    .contact-details{font-size:1.09rem;line-height:2.2;}
+    .contact-details a{color:#ffd700;text-decoration:underline;}
+    .contact-details .whatsapp-link{color:#25D366;font-weight:bold;}
+    .contact-extra{margin-top:18px;background:#21457a0d;padding:15px 12px;border-radius:10px;}
+    .contact-extra h4{margin-top:0;color:#ffd700;}
+    .contact-extra ul{margin-left:18px;margin-bottom:0;}
+    .contact-extra li{margin-bottom:6px;}
+    footer{background:var(--brand);color:#fff;padding:19px 0;text-align:center;}
+    .footer-links{margin:10px 0;}
+    .footer-links a{color:#fff;margin:0 16px;text-decoration:none;font-size:1.01rem;}
+    .footer-links .whatsapp-link{color:#25D366;font-weight:700;}
+  </style>
+</head>
+<body>
+
+<div class="banner-top">
+  Apply for Internship:
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3CVIWIXpCFR5ymnIu43wVC08bVTZcW4h7E9v8euQA1vZYKQ/viewform?usp=sharing" target="_blank">Fill Google Form</a>
+</div>
+
+<header>
+  <div class="container header-inner">
+    <div>
+      <div class="site-title">HL Intellect</div>
+      <div class="site-desc">Smart Thinking, Real Solutions</div>
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#trainers">Our Trainers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="overview">
+  <div class="container hero-flex">
+    <div class="hero-left">
+      <h1>Empowering Education & Careers in Data and Technology</h1>
+      <h2>Jaipur, Rajasthan</h2>
+      <p>HL Intellect Pvt. Ltd. equips individuals and organizations with practical skills in Data Science, AI, Big Data, BI, MLOps, and more. Learn from industry experts, build real projects, and advance your career with placement and mentorship support.</p>
+      <button class="cta" onclick="window.location='#contact'">Get in Touch</button>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" class="hero-img" alt="Student group - HL Intellect">
+    </div>
+  </div>
+</section>
+
+<section class="programs" id="programs">
+  <div class="container">
+    <div class="section-title">Our Programs</div>
+    <div class="program-cards">
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Data Science">
+        <h3>Data Science</h3>
+        <p>Data wrangling, ML algorithms, Python, visualization, business analytics, capstone projects & placement prep.</p>
+        <button class="more-btn" onclick="showDetails('data-science')">More Details</button>
+        <div class="details-panel" id="detail-data-science">
+          <div>Practical ML, analytics, business case studies, mini-projects, 1:1 mentorship, and interview training.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="MLOps">
+        <h3>MLOps</h3>
+        <p>End-to-end ML automation: CI/CD, Docker, Kubernetes, deployment, monitoring, dashboards, devops best practices.</p>
+        <button class="more-btn" onclick="showDetails('mlops')">More Details</button>
+        <div class="details-panel" id="detail-mlops">
+          <div>Build & deploy ML pipelines using containerization, cloud tools, CI/CD, real-time dashboards, and team collaboration.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Artificial Intelligence">
+        <h3>Artificial Intelligence (AI)</h3>
+        <p>Neural networks, transformers, LLMs, NLP, computer vision, generative AI, hackathons, advanced projects.</p>
+        <button class="more-btn" onclick="showDetails('ai')">More Details</button>
+        <div class="details-panel" id="detail-ai">
+          <div>Deep learning, ChatGPT applications, NLP, image/audio analytics, hackathons, and career guidance.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Big Data Technologies">
+        <h3>Big Data Technologies</h3>
+        <p>Hadoop, Spark, NoSQL, distributed data analytics, cloud, ETL, data lakes, TB+ business data projects.</p>
+        <button class="more-btn" onclick="showDetails('bigdata')">More Details</button>
+        <div class="details-panel" id="detail-bigdata">
+          <div>Scalable data engineering, ETL, Spark pipelines, distributed real-world analytics, resume/interview prep.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=800&q=80" alt="SQL & Database Management">
+        <h3>SQL & Database Management</h3>
+        <p>SQL, schema design, advanced queries, optimization, stored procedures, business DB projects & interview skills.</p>
+        <button class="more-btn" onclick="showDetails('sql')">More Details</button>
+        <div class="details-panel" id="detail-sql">
+          <div>MySQL/NoSQL, architecture, query tuning, multi-table joins, hands-on business databases, interview prep.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="program-image" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Business Intelligence">
+        <h3>Business Intelligence: Power BI & Tableau</h3>
+        <p>Dashboards, KPIs, Power BI/Tableau, DAX, enterprise reporting, visualization, business data storytelling.</p>
+        <button class="more-btn" onclick="showDetails('bi')">More Details</button>
+        <div class="details-panel" id="detail-bi">
+          <div>Dashboards, DAX, KPIs, data integration, BI case studies, resume/interview support.</div>
+          <div class="fee">Full Course Fee: ₹5000 — Internship: ₹2000</div>
+          <div>
+            <a class="contact-btn" href="tel:8875445763">Call</a>
+            <a class="contact-btn" href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="service">
+      <h4>Career Development Coaching</h4>
+      <ul>
+        <li>Personal mentoring</li>
+        <li>Career planning, resume & LinkedIn optimization</li>
+        <li>Mock interviews for tech roles</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Corporate Training</h4>
+      <ul>
+        <li>Upskilling teams: Data/AI/Cloud</li>
+        <li>Custom programs for organizations</li>
+        <li>Managerial & leadership development</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Interview Preparation</h4>
+      <ul>
+        <li>Technical/HR round prep</li>
+        <li>Mock interviews & feedback</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Leadership Development</h4>
+      <ul>
+        <li>Workshops for managers</li>
+        <li>People skills, project management</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Training Programs</h4>
+      <ul>
+        <li>Big Data, AI, BI, SQL etc.</li>
+        <li>Short/long term courses</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Android & Database Development</h4>
+      <ul>
+        <li>App building: Android Studio</li>
+        <li>MySQL, NoSQL, DB architecture</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Web Design & UX</h4>
+      <ul>
+        <li>Modern UI/web design</li>
+        <li>Responsive interfaces</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h4>Software Testing</h4>
+      <ul>
+        <li>QA, automation, functional testing</li>
+        <li>Agile workflows</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="trainers" id="trainers">
+  <div class="container">
+    <h2 class="section-title">Our Trainers</h2>
+    <div class="trainer">
+      <h4>Lokesh Kumar Meena</h4>
+      <span>Training & Development Specialist<br>
+      NIT Rourkela Alumni • Ex-IBM & Infosys<br>
+      Technical Trainer: Data Science, MLops, SQL, Python, Big Data, Deep Learning, LLM, AI, IBM Watson</span>
+      <div class="trainer-details">
+        <ul>
+          <li>10+ years experience in Data Science & Big Data</li>
+          <li>Delivered 100+ workshops/seminars for students/professionals</li>
+          <li>Expert in deep learning, MLOps, cloud, NLP</li>
+          <li>Personal mentoring, career guidance & interview prep</li>
+        </ul>
+      </div>
+    </div>
+    <div class="trainer">
+      <h4>Guest Faculty & Industry Experts</h4>
+      <span>Corporate trainers, startup entrepreneurs, research professors and tech managers who deliver sessions on cutting-edge skills.</span>
+      <div class="trainer-details">
+        <ul>
+          <li>Cloud computing, AI application, leadership, project management</li>
+          <li>Project reviews, hackathons and career skill sessions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-details">
+      <b>Phone:</b> <a href="tel:8875445763">8875445763</a><br>
+      <b>Email:</b> <a href="mailto:hlintellectpvtltd@gmail.com">hlintellectpvtltd@gmail.com</a><br>
+      <b>LinkedIn:</b> <a href="https://www.linkedin.com/company/107368115/admin/dashboard/" target="_blank">Visit Our LinkedIn Profile</a><br>
+      <b>WhatsApp:</b> <a class="whatsapp-link" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">Connect Here</a><br>
+      <b>Apply for Internship:</b> <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3CVIWIXpCFR5ymnIu43wVC08bVTZcW4h7E9v8euQA1vZYKQ/viewform?usp=sharing" target="_blank">Fill Google Form</a><br>
+      <b>Location:</b> Jaipur, Rajasthan
+    </div>
+    <div class="contact-extra">
+      <h4>Working Hours</h4>
+      <ul>
+        <li>Mon–Fri: 9:00 AM – 7:00 PM</li>
+        <li>Saturday: 10:00 AM – 3:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+      <h4>Languages</h4>
+      <ul>
+        <li>English, Hindi</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="tel:8875445763">Call Us: 8875445763</a>
+    <a href="mailto:hlintellectpvtltd@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/company/107368115/admin/dashboard/" target="_blank">LinkedIn</a>
+    <a class="whatsapp-link" href="https://chat.whatsapp.com/GuT9Jzu3EIK1FCq2BOHMxJ" target="_blank">WhatsApp</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3CVIWIXpCFR5ymnIu43wVC08bVTZcW4h7E9v8euQA1vZYKQ/viewform?usp=sharing" target="_blank">Apply for Internship</a>
+    <a href="#overview">Top</a>
+  </div>
+  <div>
+    &copy; 2025 HL Intellect Pvt. Ltd. | Smart Thinking, Real Solutions | Jaipur, Rajasthan
+  </div>
+</footer>
+
+<script>
+function showDetails(id) {
+  var panels = document.querySelectorAll('.details-panel');
+  panels.forEach(p => p.classList.remove('show'));
+  var selected = document.getElementById('detail-' + id);
+  if (selected) selected.classList.add('show');
+}
+</script>
+</body>
+</html>
